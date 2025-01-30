@@ -7,7 +7,6 @@ import (
 	"strings"
 )
 
-// XORDecrypt decrypts a slice of ASCII values using a repeating key
 func XORDecrypt(ciphertext []int, key string) string {
 	plaintext := make([]byte, len(ciphertext))
 	keyBytes := []byte(key)
@@ -19,7 +18,6 @@ func XORDecrypt(ciphertext []int, key string) string {
 	return string(plaintext)
 }
 
-// FindKey attempts to determine the three-letter key used in XOR encryption
 func FindKey(ciphertext []int) string {
 	possibleChars := "abcdefghijklmnopqrstuvwxyz"
 	bestKey := ""
@@ -42,7 +40,6 @@ func FindKey(ciphertext []int) string {
 	return bestKey
 }
 
-// countEnglishWords evaluates how many common English words are in the text
 func countEnglishWords(text string) int {
 	commonWords := []string{"the", "be", "to", "of", "and", "in", "that", "have", "it", "is", "with", "on"}
 	score := 0
@@ -72,8 +69,6 @@ func main() {
 			return
 		}
 	}
-
-	// ciphertext := []int{36, 22, 80, 0, 0, 4, 23, 25, 19, 17, 88, 4, 4, 19, 21, 11, 88, 22, 23, 23, 29, 69, 12, 24, 0, 88, 25, 11, 12, 2, 10, 28, 5, 6, 12, 25, 10, 22, 80, 10, 30, 80, 10, 22, 21, 69, 23, 22, 69, 61, 5, 9, 29, 2, 66, 11, 80, 8, 23, 3, 17, 88, 19, 0, 20, 21, 7, 10, 17, 17, 29, 20, 69, 8, 17, 21, 29, 2, 22, 84, 80, 71, 60, 21, 69, 11, 5, 8, 21, 25, 22, 88}
 
 	// Step 1: Find the key
 	key := FindKey(ciphertext)

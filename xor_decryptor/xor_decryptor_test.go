@@ -5,7 +5,7 @@ import (
 )
 
 func TestXORDecrypt(t *testing.T) {
-	ciphertext := []int{104, 101, 108, 108, 111, 119, 111, 114, 108, 100} // Encrypted "helloworld"
+	ciphertext := []int{104, 101, 108, 108, 111, 119, 111, 114, 108, 100}
 	key := "abc"
 
 	expected := "helloworld"
@@ -28,7 +28,7 @@ func TestFindKey(t *testing.T) {
 
 func TestCountEnglishWords(t *testing.T) {
 	text := "the quick brown fox jumps over the lazy dog"
-	expected := 3 // "the" appears twice, "in" appears once
+	expected := 3
 	result := countEnglishWords(text)
 
 	if result != expected {
